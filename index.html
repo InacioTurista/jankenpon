@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- START OF THE HEAD -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A jokenpon game, simple as it is." />
+  <meta name="keywords" content="jankenpon, jokenpo, jokenpô" />
+  <meta name="author" content="Inacioturist" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>JanKenPon</title>
+</head>
+
+<!-- END OF THE HEAD -->
+
+<!-- START OF THE BODY -->
+
+<body>
+
+  <h1>JanKenPon</h1>
+  <hr />
+  <div id="rules">
+    <p>Choose one of the three options and then I'll also pick one randomly.</p>
+    <p>The ROCK defeat the SCISSOR.</p>
+    <p>The PAPER defeat the ROCK.</p>
+    <p>The SCISSOR defeat the PAPER.</p>
+    <p>Let the game begin, good luck!</p>
+  </div>
+  <hr />
+  <div id="cards">
+    <img src="pedra.png" alt="Rock" onclick="selectYourPick('rock'); image('pedra.png')">
+    <img src="papel.png" alt="Paper" onclick="selectYourPick('paper'); image('papel.png')">
+    <img src="tesoura.png" alt="Scissor" onclick="selectYourPick('scissor'); image('tesoura.png')">
+  </div>
+  <hr />
+  <div id="picks-result">
+    <div id="your-pick">
+      <h2>Your Pick</h2>
+      <hr />
+      <img id="your-img">
+    </div>
+    <div id="my-pick">
+      <h2>My Pick</h2>
+      <hr />
+      <img id="my-img">
+    </div>
+    <div id="result">
+      <h2>Result</h2>
+      <hr />
+      <img id="result-img">
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+<!-- END OF THE BODY -->
+
+</html>
