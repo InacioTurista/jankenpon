@@ -87,10 +87,19 @@ h2 {
   width: 80%;
 }
 
-.imageFeatures {
+.yourImageFeatures {
   height: 180px;
   width: 180px;
   position: absolute;
   top: 725px;
   left: 455px;
 }
+
+.myImageFeatures {
+  height: 180px;
+  width: 180px;
+  position: absolute;
+  top: 725px;
+  left: 830px;
+}
+
