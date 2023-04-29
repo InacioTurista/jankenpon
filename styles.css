@@ -74,6 +74,7 @@ h2 {
 #your-pick,
 #my-pick,
 #result {
+  position: relative; /*position set to relative so now we can position the imgs relative to the elements*/
   border: 1px solid black;
   border-radius: 15%;
   height: 280px;
@@ -91,8 +92,8 @@ h2 {
   height: 180px;
   width: 180px;
   position: absolute;
-  top: 725px;
-  left: 455px;
+  top: 70px;
+  left: 40px;
 }
 
 .myImageFeatures {
