@@ -36,7 +36,7 @@ function image(src) {
 
   var img = document.createElement("img");
   img.src = src;
-  img.classList.add("imageFeatures");
+  img.classList.add("yourImageFeatures");
   document.body.appendChild(img);
 
   // To update my previousImage
