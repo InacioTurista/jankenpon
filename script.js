@@ -1,46 +1,66 @@
 const options = ["rock", "paper", "scissor"];
-let myImg = document.getElementById('my-img');
-let yourImg = document.getElementById('your-img');
+let myImg = document.getElementById("my-img");
+let yourImg = document.getElementById("your-img");
 let yourPick;
 let myPick;
 let score;
 
-function selectYourPick(option) {
+//I changed the name of this function to make more sense.
+function select(option) {
   yourPick = option;
   myPick = options[Math.floor(Math.random() * 3)]; //changed number from 2 to 3 because the value "scissor" wasn't working.
-  
+
   if (
     (yourPick == "rock" && myPick == "paper") ||
     (yourPick == "paper" && myPick == "scissor") ||
     (yourPick == "scissor" && myPick == "rock")
   ) {
-    score = "I Won!";
+    score = "loose";
   } else if (
     (yourPick == "rock" && myPick == "scissor") ||
     (yourPick == "paper" && myPick == "rock") ||
     (yourPick == "scissor" && myPick == "paper")
   ) {
-    score = "You Won!";
+    score = "win";
   } else {
-    score = "Draw!";
+    score = "draw";
   }
 
-  /*
-  added console.log to check how the code is working,
-  it can be seeing pressing ctrl+shift+i on the browser and clicking on console.
-  */
-   console.log('your: ' + yourPick + '\nmy: ' + myPick + '\nwinner: ' + score + '\n--------------'), score;
-
-   //added switch which for each myPick's value call the image() function to add the respective img.
-  
- switch(myPick) {
-    case "paper": image('papel.png','my-img')
-    break
-    case "scissor": image('tesoura.png','my-img')
-    break
-    default : image('pedra.png','my-img')
+  //added switch which for each myPick's value call the image() function to add the respective img.
+  switch (myPick) {
+    case "paper":
+      image("paper.png", "my-img");
+      break;
+    case "scissor":
+      image("scissor.png", "my-img");
+      break;
+    default:
+      image("rock.png", "my-img");
   }
-  return timeout
+  //also added for yourPick and for score.
+  switch (yourPick) {
+    case "paper":
+      image("paper.png", "your-img");
+      break;
+    case "scissor":
+      image("scissor.png", "your-img");
+      break;
+    default:
+      image("rock.png", "your-img");
+      break;
+  }
+
+  switch (score) {
+    case "win":
+      image("win.png", "result-img");
+      break;
+    case "loose":
+      image("loose.png", "result-img");
+      break;
+    case "draw":
+      image("draw.png", "result-img");
+      break;
+  }
 }
 
 /*
@@ -52,7 +72,7 @@ picture it would also unintentionally remove yourPick's picture.
 function image(src, div) {
   let adiv = document.getElementById(div);
   adiv.src = src;
-  adiv.classList.add("yourImageFeatures");
+  adiv.classList.add("imageFeatures");
 }
 /*
 function image() changed so it doesn't create an element anymore, now it adds a "src" attribute to
