@@ -22,17 +22,18 @@
   <h1>JanKenPon</h1>
   <hr />
   <div id="rules">
-    <p>Choose one of the three options and then I'll also pick one randomly.</p>
+    <p>Choose one of the three options and click on it.</p>
+    <p>Then I'll also pick one randomly.</p>
     <p>The ROCK defeat the SCISSOR.</p>
     <p>The PAPER defeat the ROCK.</p>
     <p>The SCISSOR defeat the PAPER.</p>
     <p>Let the game begin, good luck!</p>
   </div>
   <hr />
-  <div id="cards">
-    <img src="pedra.png" alt="Rock" onclick="selectYourPick('rock'); image('pedra.png')">
-    <img src="papel.png" alt="Paper" onclick="selectYourPick('paper'); image('papel.png')">
-    <img src="tesoura.png" alt="Scissor" onclick="selectYourPick('scissor'); image('tesoura.png')">
+  <div id="cards"><!-- function calls order changed so it set up the yourPick img first-->
+    <img src="rock.png" alt="Rock" onclick="select('rock')">
+    <img src="paper.png" alt="Paper" onclick="select('paper')">
+    <img src="scissor.png" alt="Scissor" onclick="select('scissor')">
   </div>
   <hr />
   <div id="picks-result">
