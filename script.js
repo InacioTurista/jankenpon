@@ -5,6 +5,7 @@ let yourPick;
 let myPick;
 let score;
 
+//I changed the name of this function to make more sense.
 function select(option) {
   yourPick = option;
   myPick = options[Math.floor(Math.random() * 3)]; //changed number from 2 to 3 because the value "scissor" wasn't working.
