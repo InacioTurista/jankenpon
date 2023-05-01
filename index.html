@@ -29,10 +29,10 @@
     <p>Let the game begin, good luck!</p>
   </div>
   <hr />
-  <div id="cards">
-    <img src="pedra.png" alt="Rock" onclick="selectYourPick('rock'); image('pedra.png')">
-    <img src="papel.png" alt="Paper" onclick="selectYourPick('paper'); image('papel.png')">
-    <img src="tesoura.png" alt="Scissor" onclick="selectYourPick('scissor'); image('tesoura.png')">
+  <div id="cards"><!-- function calls order changed so it set up the yourPick img first-->  
+    <img src="pedra.png" alt="Rock" onclick="image('pedra.png', 'your-img'); selectYourPick('rock')">
+    <img src="papel.png" alt="Paper" onclick="image('papel.png', 'your-img'); selectYourPick('paper')">
+    <img src="tesoura.png" alt="Scissor" onclick="image('tesoura.png', 'your-img'); selectYourPick('scissor')">
   </div>
   <hr />
   <div id="picks-result">
