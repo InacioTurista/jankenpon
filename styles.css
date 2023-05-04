@@ -85,6 +85,42 @@ hr {
   cursor: pointer;
 }
 
+#score-table {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(56, 63, 70);
+  border-radius: 10%;
+  max-height: 260px;
+  max-width: 280px;
+  min-height: 90px;
+  min-width: 90px;
+  object-fit: contain;
+  margin: auto 40px;
+  padding: 3px;
+  text-align: center;
+  align-items: center;
+}
+
+#score-table p {
+  margin: 5px 5px auto 5px;
+  font-weight: bold;
+}
+
+#score-table hr {
+  height: 4px;
+  width: 95%;
+  margin: 3px auto;
+  position: relative;
+}
+
+#win-times,
+#lost-times,
+#draw-times {
+  border: 1px solid gray;
+  border-radius: 10%;
+  width: 40px;
+}
+
 #picks-result {
   display: flex;
   flex-direction: row;
