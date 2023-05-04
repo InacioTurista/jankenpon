@@ -15,6 +15,9 @@ let yourPick;
 let myPick;
 let score;
 let count = 0;
+let winTimes = 0;
+let lostTimes = 0;
+let drawTimes = 0;
 
 //--------------- Responsible for setting the images ----------------------//
 
@@ -82,4 +85,20 @@ function result(yourOption) {
   setTimeout(function () {
     image(results[score], "result-img");
   }, 1400);
+
+  setTimeout(function () {
+    switch (score) {
+      case "win":
+        winTimes++;
+        document.getElementById("win-times").textContent = `${winTimes}`;
+        break;
+      case "lose":
+        lostTimes++;
+        document.getElementById("lost-times").textContent = `${lostTimes}`;
+        break;
+      default:
+        drawTimes++;
+        document.getElementById("draw-times").textContent = `${drawTimes}`;
+    }
+  }, 2200);
 }

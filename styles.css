@@ -85,6 +85,43 @@ hr {
   cursor: pointer;
 }
 
+#score-table {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(56, 63, 70);
+  border-radius: 20%;
+  max-height: 260px;
+  max-width: 280px;
+  min-height: 70px;
+  min-width: 70px;
+  object-fit: contain;
+  margin: auto 40px;
+  padding: 3px;
+  text-align: center;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+#score-table p {
+  margin: 5px 5px auto 5px;
+  font-weight: bold;
+}
+
+#score-table hr {
+  height: 4px;
+  width: 95%;
+  margin: 3px auto;
+  position: relative;
+}
+
+#win-times,
+#lost-times,
+#draw-times {
+  border: 1px solid gray;
+  border-radius: 10%;
+  width: 40px;
+}
+
 #picks-result {
   display: flex;
   flex-direction: row;
@@ -108,8 +145,8 @@ h2 {
   border-radius: 15%;
   max-height: 260px;
   max-width: 280px;
-  min-height: 105px;
-  min-width: 110px;
+  min-height: 90px;
+  min-width: 95px;
   object-fit: contain;
   display: flex;
   flex-direction: column;
@@ -145,12 +182,20 @@ h2 {
   #result {
     margin: auto 35px;
   }
+
+  #score-table {
+    margin: auto 35px;
+  }
 }
 
 @media only screen and (max-width: 1050px) and (min-width: 951px) {
   #your-pick,
   #my-pick,
   #result {
+    margin: auto 30px;
+  }
+
+  #score-table {
     margin: auto 30px;
   }
 }
@@ -180,6 +225,11 @@ h2 {
 
   #cards img {
     margin: auto 25px;
+  }
+
+  #score-table {
+    margin: auto 20px;
+    font-size: 1.3rem;
   }
 
   #picks-result {
@@ -225,6 +275,21 @@ h2 {
     margin: auto 15px;
   }
 
+  #score-table {
+    margin: auto 15px;
+    font-size: 1.1rem;
+    padding: 2px;
+  }
+
+  #score-table p {
+    margin: 4px 4px auto 4px;
+  }
+
+  #score-table hr {
+    height: 3px;
+    margin: 2px auto;
+  }
+
   #picks-result {
     margin: 15px auto;
   }
@@ -266,6 +331,21 @@ h2 {
 
   #cards img {
     margin: auto 10px;
+  }
+
+  #score-table {
+    margin: auto 10px;
+    font-size: 1rem;
+    padding: 1px;
+  }
+
+  #score-table p {
+    margin: 3px 3px auto 3px;
+  }
+
+  #score-table hr {
+    height: 2px;
+    margin: 1px auto;
   }
 
   #picks-result {
