@@ -35,13 +35,11 @@ function image(src, local) {
   }
 
   adiv.src = src;
-
+  adiv.classList.add("imageFeatures");
   // Added this setTimeout so the image stays a little time hidden before it's shown again.
   setTimeout(function () {
     adiv.classList.remove("hidden");
-  }, 400);
-
-  adiv.classList.add("imageFeatures");
+  }, 300);
 
   count++;
 }
@@ -50,18 +48,28 @@ function image(src, local) {
 
 let choice = document.getElementsByClassName("choices");
 let choiceArr = [...choice];
-console.log(choiceArr);
-choiceArr.map((a) =>
-  a.addEventListener("click", () => {
-    return image(a.src, "your-img"), result(choiceArr.indexOf(a));
-  })
-);
+choiceArr.map((a) => a.addEventListener ('click', handleClick))
+
+  function handleClick (){
+    this.removeEventListener("click", handleClick);
+    return image(this.src, "your-img"), result(choiceArr.indexOf(this)), repeat(this)
+}
+
+  function repeat (elementClicked) {
+
+  setTimeout(() => {
+    elementClicked.addEventListener ('click', handleClick);
+}, 2800);
+}
+  // Add event listener back after 3 seconds
+
+
 //--------------------- ------------------------ --------------------//
 
 //Result and myPick's choice print
 
 function result(yourOption) {
-  let random = [Math.round(Math.random() * 2)];
+  let random = [Math.floor(Math.random() * 3)];
   yourPick = yourOption;
   myPick = random;
 
@@ -101,4 +109,4 @@ function result(yourOption) {
         document.getElementById("draw-times").textContent = `${drawTimes}`;
     }
   }, 2200);
-}
+  }
