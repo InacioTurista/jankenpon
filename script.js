@@ -34,12 +34,14 @@ function image(src, local) {
     document.getElementById("result-img").classList.add("hidden");
   }
 
-  adiv.src = src;
-  adiv.classList.add("imageFeatures");
   // Added this setTimeout so the image stays a little time hidden before it's shown again.
+
   setTimeout(function () {
     adiv.classList.remove("hidden");
   }, 300);
+
+  adiv.src = src;
+  adiv.classList.add("imageFeatures");
 
   count++;
 }
@@ -51,14 +53,14 @@ let choiceArr = [...choice];
 choiceArr.map((a) => a.addEventListener ('click', handleClick))
 
   function handleClick (){
-    this.removeEventListener("click", handleClick);
-    return image(this.src, "your-img"), result(choiceArr.indexOf(this)), repeat(this)
+    choiceArr.map((a) => a.removeEventListener("click", handleClick));
+    return image(this.src, "your-img"), result(choiceArr.indexOf(this)), choiceArr.map((a) => repeat(a))
 }
 
-  function repeat (elementClicked) {
-
+  function repeat (a) {
+//add new event listener
   setTimeout(() => {
-    elementClicked.addEventListener ('click', handleClick);
+    a.addEventListener ('click', handleClick);
 }, 2800);
 }
   // Add event listener back after 3 seconds
