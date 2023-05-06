@@ -30,7 +30,7 @@ h1 {
   font-size: 2.8rem;
   text-shadow: 2px 2px 4px gray;
   text-align: center;
-  margin: 38px auto;
+  margin: 30px auto;
   display: flex;
   justify-content: center;
 }
@@ -50,16 +50,12 @@ hr {
 
 #rules p {
   text-align: center;
-  margin: 10px auto;
+  margin: 8px auto;
   font-size: 1.4rem;
   display: flex;
   justify-content: center;
   min-height: 20px;
   max-width: 500px;
-}
-
-.bold {
-  font-weight: bold;
 }
 
 #cards {
@@ -203,10 +199,10 @@ h2 {
   }
 }
 
-@media only screen and (max-width: 950px) and (min-width: 651px) {
+@media only screen and (max-width: 950px) and (min-width: 751px) {
   h1 {
     font-size: 2.6rem;
-    margin: 25px auto;
+    margin: 22px auto;
   }
 
   hr {
@@ -218,7 +214,7 @@ h2 {
   }
 
   #rules p {
-    margin: 8px auto;
+    margin: 6px auto;
     font-size: 1.3rem;
   }
 
@@ -248,13 +244,63 @@ h2 {
   #my-pick,
   #result {
     margin: auto 20px;
+    max-height: 220px;
   }
 }
 
-@media only screen and (max-width: 650px) and (min-width: 501px) {
+@media only screen and (max-width: 750px) and (min-width: 651px) {
+  h1 {
+    font-size: 2.6rem;
+    margin: 22px auto;
+  }
+
+  hr {
+    height: 4px;
+  }
+
+  #rules {
+    margin: 14px auto;
+  }
+
+  #rules p {
+    margin: 6px auto;
+    font-size: 1.3rem;
+  }
+
+  #cards {
+    margin: 30px auto;
+  }
+
+  #cards img {
+    margin: auto 25px;
+  }
+
+  #score-table {
+    margin: auto 20px;
+    font-size: 1.3rem;
+  }
+
+  #picks-result {
+    margin: 30px auto;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 10px auto;
+  }
+
+  #your-pick,
+  #my-pick,
+  #result {
+    margin: auto 20px;
+    max-height: 190px;
+  }
+}
+
+@media only screen and (max-width: 650px) and (min-width: 581px) {
   h1 {
     font-size: 2.4rem;
-    margin: 15px auto;
+    margin: 12px auto;
   }
 
   hr {
@@ -266,7 +312,7 @@ h2 {
   }
 
   #rules p {
-    margin: 6px auto;
+    margin: 5px auto;
     font-size: 1.1rem;
   }
 
@@ -306,10 +352,70 @@ h2 {
   #my-pick,
   #result {
     margin: auto 15px;
+    max-height: 160px;
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 650px) and (min-width: 501px) {
+  h1 {
+    font-size: 2.4rem;
+    margin: 12px auto;
+  }
+
+  hr {
+    height: 4px;
+  }
+
+  #rules {
+    margin: 10px auto;
+  }
+
+  #rules p {
+    margin: 5px auto;
+    font-size: 1.1rem;
+  }
+
+  #cards {
+    margin: 20px auto;
+  }
+
+  #cards img {
+    margin: auto 15px;
+  }
+
+  #score-table {
+    margin: auto 15px;
+    font-size: 1.1rem;
+    padding: 2px;
+  }
+
+  #score-table p {
+    margin: 4px 4px auto 4px;
+  }
+
+  #score-table hr {
+    height: 3px;
+    margin: 2px auto;
+  }
+
+  #picks-result {
+    margin: 15px auto;
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin: 10px auto;
+  }
+
+  #your-pick,
+  #my-pick,
+  #result {
+    margin: auto 15px;
+    max-height: 145px;
+  }
+}
+
+@media only screen and (max-width: 500px) and (min-width: 451px) {
   h1 {
     font-size: 2rem;
     margin: 10px auto;
@@ -324,7 +430,7 @@ h2 {
   }
 
   #rules p {
-    margin: 5px auto;
+    margin: 4px auto;
     font-size: 1rem;
   }
 
@@ -364,5 +470,65 @@ h2 {
   #my-pick,
   #result {
     margin: auto 10px;
+    max-height: 130px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  h1 {
+    font-size: 2rem;
+    margin: 10px auto;
+  }
+
+  hr {
+    height: 2px;
+  }
+
+  #rules {
+    margin: 8px auto;
+  }
+
+  #rules p {
+    margin: 4px auto;
+    font-size: 1rem;
+  }
+
+  #cards {
+    margin: 10px auto;
+  }
+
+  #cards img {
+    margin: auto 10px;
+  }
+
+  #score-table {
+    margin: auto 10px;
+    font-size: 1rem;
+    padding: 1px;
+  }
+
+  #score-table p {
+    margin: 3px 3px auto 3px;
+  }
+
+  #score-table hr {
+    height: 2px;
+    margin: 1px auto;
+  }
+
+  #picks-result {
+    margin: 10px auto;
+  }
+
+  h2 {
+    font-size: 0.9rem;
+    margin: 10px auto;
+  }
+
+  #your-pick,
+  #my-pick,
+  #result {
+    margin: auto 10px;
+    max-height: 106px;
   }
 }
