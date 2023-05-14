@@ -9,8 +9,12 @@
   <meta name="description" content="A jokenpon game, simple as it is." />
   <meta name="keywords" content="jankenpon, jokenpo, jokenpô" />
   <meta name="author" content="Inacioturist" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/src/css/reset.css" />
+  <link rel="stylesheet" href="/src/css/styles.css">
   <title>JanKenPon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;800&display=swap" rel="stylesheet">
 </head>
 
 <!-- END OF THE HEAD -->
@@ -31,9 +35,9 @@
   </div>
   <hr />
   <div id="cards">
-    <img src="images/rock.png" alt="Rock" class="choices">
-    <img src="images/paper.png" alt="Paper" class="choices">
-    <img src="images/scissor.png" alt="Scissor" class="choices">
+    <img src="./src/images/rock.png" alt="Rock" class="choices">
+    <img src="./src/images/paper.png" alt="Paper" class="choices">
+    <img src="./src/images/scissor.png" alt="Scissor" class="choices">
     <div id="score-table">
       <p>Wins</p>
       <p id="win-times">0</p>
@@ -53,7 +57,7 @@
       <img id="your-img">
     </div>
     <div id="my-pick">
-      <h2>My Pick</h2>
+      <h2>Bot Pick</h2>
       <hr />
       <img id="my-img">
     </div>
@@ -63,7 +67,7 @@
       <img id="result-img">
     </div>
   </div>
-  <script src="script.js"></script>
+  <script src="./src/js/index.js"></script>
 </body>
 
 <!-- END OF THE BODY -->

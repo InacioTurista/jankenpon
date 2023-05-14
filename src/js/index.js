@@ -1,14 +1,14 @@
 //Sides and result variables
 
 const myPickOptions = {
-  rock: "images/rock.png",
-  paper: "images/paper.png",
-  scissor: "images/scissor.png",
+  rock: "./src/images/rock.png",
+  paper: "./src/images/paper.png",
+  scissor: "./src/images/scissor.png",
 };
 const results = {
-  draw: "images/draw.png",
-  win: "images/win.png",
-  lose: "images/lose.png",
+  draw: "./src/images/draw.png",
+  win: "./src/images/win.png",
+  lose: "./src/images/lose.png",
 };
 const myPickImgs = Object.values(myPickOptions);
 let yourPick;
@@ -23,25 +23,20 @@ let drawTimes = 0;
 
 function image(src, local) {
   let adiv = document.getElementById(local);
+  adiv.src = src;
+  adiv.classList.add("imageFeatures");
 
   // Added this if statement to hide all the images in the right moment
   if (count % 3 === 0) {
-    document.getElementById("your-img").classList.remove("imageFeatures");
-    document.getElementById("my-img").classList.remove("imageFeatures");
-    document.getElementById("result-img").classList.remove("imageFeatures");
     document.getElementById("your-img").classList.add("hidden");
     document.getElementById("my-img").classList.add("hidden");
     document.getElementById("result-img").classList.add("hidden");
   }
 
   // Added this setTimeout so the image stays a little time hidden before it's shown again.
-
   setTimeout(function () {
     adiv.classList.remove("hidden");
   }, 300);
-
-  adiv.src = src;
-  adiv.classList.add("imageFeatures");
 
   count++;
 }
@@ -50,21 +45,24 @@ function image(src, local) {
 
 let choice = document.getElementsByClassName("choices");
 let choiceArr = [...choice];
-choiceArr.map((a) => a.addEventListener ('click', handleClick))
+choiceArr.map((a) => a.addEventListener("click", handleClick));
 
-  function handleClick (){
-    choiceArr.map((a) => a.removeEventListener("click", handleClick));
-    return image(this.src, "your-img"), result(choiceArr.indexOf(this)), choiceArr.map((a) => repeat(a))
+function handleClick() {
+  choiceArr.map((a) => a.removeEventListener("click", handleClick));
+  return (
+    image(this.src, "your-img"),
+    result(choiceArr.indexOf(this)),
+    choiceArr.map((a) => repeat(a))
+  );
 }
 
-  function repeat (a) {
-//add new event listener
+function repeat(a) {
+  //add new event listener
   setTimeout(() => {
-    a.addEventListener ('click', handleClick);
-}, 2800);
+    a.addEventListener("click", handleClick);
+  }, 2800);
 }
-  // Add event listener back after 3 seconds
-
+// Add event listener back after 3 seconds
 
 //--------------------- ------------------------ --------------------//
 
@@ -111,4 +109,4 @@ function result(yourOption) {
         document.getElementById("draw-times").textContent = `${drawTimes}`;
     }
   }, 2200);
-  }
+}
