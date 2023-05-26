@@ -19,6 +19,32 @@ let winTimes = 0;
 let lostTimes = 0;
 let drawTimes = 0;
 
+const yourImgHtml = document.getElementById("your-img");
+const myImgHtml = document.getElementById("my-img");
+const resultImgHtml = document.getElementById("result-img");
+const winTimesHtml = document.getElementById("win-times");
+const lostTimesHtml = document.getElementById("lost-times");
+const drawTimesHtml = document.getElementById("draw-times");
+const choicesHtml = document.getElementsByClassName("choices");
+
+//----------- Dark mode settings ------------//
+
+const themeChangerButton = document.getElementById("theme-changer-button");
+const body = document.querySelector("body");
+const changeThemeImage = document.querySelector(".button-image");
+
+themeChangerButton.addEventListener("click", () => {
+  const darkModeIsOn = body.classList.contains("dark-mode");
+
+  body.classList.toggle("dark-mode");
+
+  if (darkModeIsOn) {
+    changeThemeImage.setAttribute("src", "./src/images/sun.png");
+  } else {
+    changeThemeImage.setAttribute("src", "./src/images/moon.png");
+  }
+});
+
 //--------------- Responsible for setting the images ----------------------//
 
 function image(src, local) {
@@ -28,9 +54,9 @@ function image(src, local) {
 
   // Added this if statement to hide all the images in the right moment
   if (count % 3 === 0) {
-    document.getElementById("your-img").classList.add("hidden");
-    document.getElementById("my-img").classList.add("hidden");
-    document.getElementById("result-img").classList.add("hidden");
+    yourImgHtml.classList.add("hidden");
+    myImgHtml.classList.add("hidden");
+    resultImgHtml.classList.add("hidden");
   }
 
   // Added this setTimeout so the image stays a little time hidden before it's shown again.
@@ -43,8 +69,7 @@ function image(src, local) {
 
 //-------------------- yourPick's Event listeners --------------------//
 
-let choice = document.getElementsByClassName("choices");
-let choiceArr = [...choice];
+let choiceArr = [...choicesHtml];
 choiceArr.map((a) => a.addEventListener("click", handleClick));
 
 function handleClick() {
@@ -98,15 +123,15 @@ function result(yourOption) {
     switch (score) {
       case "win":
         winTimes++;
-        document.getElementById("win-times").textContent = `${winTimes}`;
+        winTimesHtml.textContent = `${winTimes}`;
         break;
       case "lose":
         lostTimes++;
-        document.getElementById("lost-times").textContent = `${lostTimes}`;
+        lostTimesHtml.textContent = `${lostTimes}`;
         break;
       default:
         drawTimes++;
-        document.getElementById("draw-times").textContent = `${drawTimes}`;
+        drawTimesHtml.textContent = `${drawTimes}`;
     }
   }, 2200);
 }
